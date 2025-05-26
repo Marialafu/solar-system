@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS } from './colors';
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -29,8 +30,12 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-    margin: 3.125rem;
-    font-family: sans-serif;
+    margin: 0;
+    font-family: "Antonio", sans-serif;
+    font-weight: 500;
+    color: ${COLORS.white900};
+    background-color: ${COLORS.primaryColor};
+    background-image: url(/assets/background-stars.svg);
     }
 
 `;
