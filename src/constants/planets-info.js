@@ -1,5 +1,5 @@
 import { v4 } from 'uuid';
-import { COLORS } from '../styles/Color';
+import { COLORS } from '../styles/colors';
 
 const MERCURY = {
   id: v4(),

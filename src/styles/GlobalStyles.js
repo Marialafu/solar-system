@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { COLORS } from './colors';
+import { FONTS } from './fonts';
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -31,7 +32,7 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
     margin: 0;
-    font-family: "Antonio", sans-serif;
+    font-family: ${FONTS.primaryFont};
     font-weight: 500;
     color: ${COLORS.white900};
     background-color: ${COLORS.primaryColor};

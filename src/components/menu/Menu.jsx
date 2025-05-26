@@ -1,13 +1,16 @@
-import { Link } from 'react-router-dom';
 import { PLANETS_MENU } from '../../constants/planets-menu';
 import {
   StyledHamburger,
   StyledImg,
+  StyledLink,
   StyledMenu,
   StyledMenuItem
 } from './Menu.styles';
+import { useState } from 'react';
 
-const Menu = ({ openMenu, setOpenMenu }) => {
+const Menu = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <>
       <StyledHamburger
@@ -21,9 +24,12 @@ const Menu = ({ openMenu, setOpenMenu }) => {
           {PLANETS_MENU.map(planet => {
             return (
               <StyledMenuItem key={planet.id} $planet={planet}>
-                <Link to={planet.link} onClick={() => setOpenMenu(!openMenu)}>
+                <StyledLink
+                  to={planet.link}
+                  onClick={() => setOpenMenu(!openMenu)}
+                >
                   {planet.name}
-                </Link>
+                </StyledLink>
                 <StyledImg src='/assets/icon-chevron.svg' alt='chevron' />
               </StyledMenuItem>
             );

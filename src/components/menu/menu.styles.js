@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { COLORS } from '../../styles/colors';
+import { Link } from 'react-router-dom';
+import { FONTS } from '../../styles/fonts';
 
 const StyledMenu = styled.ul`
   width: 100%;
@@ -51,11 +53,6 @@ const StyledMenu = styled.ul`
 `;
 
 const StyledMenuItem = styled.li`
-  font-family: 'Spartan', sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.9375rem;
-  line-height: 1.5625rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,10 +95,21 @@ const StyledImg = styled.img`
 
 const StyledHamburger = styled.img`
   opacity: ${({ $openMenu }) => ($openMenu ? '50%' : '100%')};
+  position: absolute;
+  top: 2.8125rem;
+  left: 90vw;
 
   @media screen and (min-width: 768px) {
     display: none;
   }
 `;
 
-export { StyledMenu, StyledMenuItem, StyledImg, StyledHamburger };
+const StyledLink = styled(Link)`
+  font-family: ${FONTS.secondaryFont};
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+`;
+
+export { StyledMenu, StyledMenuItem, StyledImg, StyledHamburger, StyledLink };
