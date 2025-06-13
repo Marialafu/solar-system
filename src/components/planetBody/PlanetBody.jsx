@@ -12,11 +12,15 @@ const PlanetBody = ({ planetName, planetSelected }) => {
   return (
     <>
       <StyledContainer>
-        <PlanetImg />
-        <PlanetInfo />
+        <PlanetImg tab={tab} planetSelected={planetSelected} />
+        <PlanetInfo
+          planetSelected={planetSelected}
+          tab={tab}
+          planetName={planetName}
+        />
         <Tabs tab={tab} setTab={setTab} planetSelected={planetSelected} />
       </StyledContainer>
-      <PlanetData />
+      <PlanetData {...planetSelected} />
     </>
   );
 };
